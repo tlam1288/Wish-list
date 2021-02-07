@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 
 import { addItem, deleteItem, deleteAll } from "./redux/actions";
 
@@ -58,6 +59,7 @@ function InputBox() {
       <div>
         <input
           style={{
+            borderRadius: "5px",
             border: "2px solid black",
             width: "540px",
           }}
@@ -71,6 +73,10 @@ function InputBox() {
       <div className="row justify-content-center">
         <Button
           className="row justify-content-center"
+          style={{
+            fontWeight: "bold",
+            color: "#000",
+          }}
           variant="success"
           onClick={handleSubmit}
         >
@@ -79,10 +85,12 @@ function InputBox() {
       </div>
       <br />
 
-      <div className="row justify-content-center">
+      <div className="row justify-content-center btn-add">
         <Button
           style={{
             width: "540px",
+            fontWeight: "bold",
+            color: "#000",
           }}
           variant="success"
           block
@@ -116,22 +124,31 @@ function WishList() {
 
 function App() {
   return (
-    <div className="container-sm" style={{ backgroundColor: "#FCC0CB" }}>
-      <div className="row justify-content-center">
-        <div className="col-6">
-          <Header />
-          <div
-            style={{
-              border: "2px solid black",
-              height: "400px",
-              width: "540px",
-              backgroundColor: "#FFF",
-            }}
-          >
-            <WishList />
+    <div style={{ backgroundColor: "grey" }}>
+      <div
+        className="container-sm mt-5"
+        style={{
+          backgroundColor: "#FCC0CB",
+          borderRadius: "25px",
+          border: "2px solid #000",
+        }}
+      >
+        <div className="row justify-content-center">
+          <div className="col-6">
+            <Header />
+            <div
+              style={{
+                border: "2px solid black",
+                height: "400px",
+                width: "540px",
+                backgroundColor: "#FFF",
+              }}
+            >
+              <WishList />
+            </div>
+            <br />
+            <InputBox />
           </div>
-          <br />
-          <InputBox />
         </div>
       </div>
     </div>
